@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #00d9ff;
+            margin: 0;
+        }
+        .car {
+            width: 200px;
+            height: 100px;
+            background-color: rgb(255, 60, 1);
+            border-radius: 10px;
+            position: relative;
+        }
+        .car__roof {
+            width: 120px;
+            height: 60px;
+            background-color: rgb(168, 70, 0);
+            border-radius: 10px;
+            position: absolute; 
+            top: -30px;
+            left: 40px;
+        }
+        .car__wheel {
+            width: 40px;
+            height: 40px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -20px;
+        }
+        .car__wheel_left {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(70deg,#2700b3,#ff4c89);
+            border: 5px black solid;
+            position: absolute;
+            bottom: -20px;
+        }
+        .car__wheel_right {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(70deg,#2700b3,#ff4c89);
+            border: 5px black solid;
+            position: absolute;
+            bottom: -20px;
+            right: 20px;
+        }
+@keyframes moveRight {
+from {
+left: -800px;
+}
+to {
+left: 100%;
+}
+    }
+    .moving-element {
+        left: -100px;
+        animation: moveRight 10s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform:rotate(0deg);
+    }
+    100% {
+        transform:rotate(360deg);
+    }
+    } 
+    .rotate {
+    animation-name: rotation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    }
+
+    </style>
+</head>
+<body>
+
+    <div class="car moving-element">
+        <div class="car__roof"></div>
+        <div class="car__wheel car__wheel_left rotate"></div>
+        <div class="car__wheel car__wheel_right rotate"></div>
+    </div>
+
+</body>
+</html>
